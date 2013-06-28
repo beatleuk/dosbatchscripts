@@ -1,4 +1,4 @@
 dosbatchscripts
 ===============
 
-Various DOC batch scripts
+Various DOS batch scripts
