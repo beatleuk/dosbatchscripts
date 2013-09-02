@@ -1,0 +1,2 @@
+<username>,vacation on|off,subject <subject text>,message <message text>,startdate <YYYY-MM-DD> ,enddate <YYYY-MM-DD>,[contactsonly],[domainonly]
+user@domain.com,on,"Out of office","I am currently out of the office and not responding to emails.\nI will reply upon my return on 04-Sept-2013.",2013-08-30,2013-09-04,n,n
