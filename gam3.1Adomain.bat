@@ -1,25 +1,31 @@
 @echo off
 setlocal EnableDelayedExpansion
 set gampath=%CD%\
+:checks
 if exist %gampath%gam.exe ( 
- if exist C:\gawk\bin\gawk.exe (
+ if exist %gampath%bin\awk.exe (
   goto:start
  ) else (
-  echo ************************************************************
-  echo * GAWK needs to be installed for this batch file to run    *
-  echo * Please download and install it, your browser will now    *
-  echo * open and download it from http://gnuwin32.sourceforge.net*
-  echo ************************************************************
-  call :sleep 3
-  Start http://gnuwin32.sourceforge.net/downlinks/gawk.php
+  echo **********************************************************
+  echo * AWK.exe needs to be present in this directory for this *
+  echo * batch file to run. your browser will now open and      *
+  echo * download it from http://gnuwin32.sourceforge.net       *
+  echo * save it to %gampath% and press any key to continue  *
+  echo **********************************************************
+  call :sleep 5
+  Start http://gnuwin32.sourceforge.net/downlinks/gawk-bin-zip.php
   pause
+  FOR /F "tokens=*" %%g in ('dir /b gawk*.zip') do set gawkzip=%%g
+  jar xf %gawkzip% bin/awk.exe
+  del %gawkzip%
+  goto:checks
  )
 ) else (
 echo ************************************************************
 echo * %gampath% is not the correct location of gam.exe *
 echo * Please place this batch file in the GAM directory        *
 echo ************************************************************
-goto:end 
+goto:checks
 )
 
 :start
@@ -104,7 +110,7 @@ echo !name[%opt%]! is the chosen domain for GAM
 goto:end
 
 :getdom
-FOR /F "tokens=*" %%i in ('c:\gawk\bin\awk.exe -f %gampath%script.awk %gampath%oauth2.txt') do SET dom=%%i
+FOR /F "tokens=*" %%i in ('%gampath%bin\awk.exe -f %gampath%script.awk %gampath%oauth2.txt') do SET dom=%%i
 
 
 :sleep
