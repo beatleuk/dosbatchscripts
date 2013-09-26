@@ -4,7 +4,21 @@ set gampath=%CD%\
 :checks
 if exist %gampath%gam.exe ( 
  if exist %gampath%bin\awk.exe (
-  goto:start
+  if exist %gampath%script.awk (
+   goto:start
+   ) else (
+   echo **********************************************************
+   echo * script.awk needs to be present in this directory for   *
+   echo * this batch file to run. Your browser will now open on  *
+   echo * the page for you to save it from. Save the page as     *
+   echo * script.awk in %gampath% and press any key to continue  *
+   echo **********************************************************
+   call :sleep 5
+   Start https://raw.github.com/beatleuk/dosbatchscripts/master/script.awk
+   pause
+   ren script.awk.txt script.awk
+   goto:checks
+   )
  ) else (
   echo **********************************************************
   echo * AWK.exe needs to be present in this directory for this *
