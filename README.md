@@ -16,3 +16,5 @@ script.awk - file for determining domain name in gam-3-domain.bat using awk.
 
 gam3.01domain.bat - batch file as per gam-3 above but including support for the provision of a service account and 
 checking that the required files exist when fist establishing the domain access.
+
+gad-sync.bat - batch script to run GADS sync-cmd.exe as a task with checking for locations before running
