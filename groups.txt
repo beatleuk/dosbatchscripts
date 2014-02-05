@@ -1,0 +1,13 @@
+accounts@gapps4you.com
+all@gapps4you.com
+collab-inbox@gapps4you.com
+department@gapps4you.com
+developers@gapps4you.com
+email-list@gapps4you.com
+finance@gapps4you.com
+inquiry@gapps4you.com
+meetings@gapps4you.com
+qaf-orum@gapps4you.com
+sanb-subscriptions@gapps4you.com
+support@gapps4you.com
+web-forum@gapps4you.com
